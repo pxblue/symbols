@@ -41,17 +41,11 @@ jobs:
               echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
               echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
         - run:
-            name: Publish @pxblue/icons
-            command: yarn publish:package -b $CIRCLE_BRANCH
-        - run:
             name: Publish @pxblue/symbols
             command: cd symbols &&  yarn publish:package -b $CIRCLE_BRANCH
-        - run:
-            name: Publish @pxblue/icons-svg
-            command: cd svg && yarn publish:package -b $CIRCLE_BRANCH
 workflows:
   version: 2
-  icons:
+  symbols:
     jobs:
       - build
       - publish:
