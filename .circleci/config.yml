@@ -5,24 +5,21 @@ jobs:
             - image: circleci/node:12.6-browsers
         steps:
             - checkout
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "package.json" }}
-                      - v1-dependencies-
             - run:
                   name: Install Dependencies
                   command: |
                       yarn install
-            - save_cache:
-                  paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}
+                      cd symbols-mui && yarn install:dependencies
             - run:
                   name: Build Packages
-                  command: yarn build
+                  command: |
+                      yarn build
+                      cd symbols-mui && yarn build
             - run:
                   name: Verify SVG Build Artifacts
-                  command: yarn test:svg
+                  command: |
+                      yarn test:svg
+                      cd symbols-mui && yarn test
             - persist_to_workspace:
                   root: .
                   paths:
@@ -43,6 +40,9 @@ jobs:
         - run:
             name: Publish @pxblue/symbols
             command: cd symbols && yarn publish:package -b $CIRCLE_BRANCH
+        - run:
+            name: Publish @pxblue/symbols-mui
+            command: cd symbols-mui && yarn publish:package -b $CIRCLE_BRANCH
 workflows:
   version: 2
   symbols:

@@ -1,0 +1,47 @@
+{
+  "name": "@pxblue/symbols-mui",
+  "version": "1.1.1",
+  "description": "PX Blue symbols for Material UI",
+  "main": "./symbols/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pxblue/symbols.git"
+  },
+  "author": "px-blue <pxblue@eaton.com>",
+  "license": "BSD-3-Clause",
+  "peerDependencies": {
+    "@material-ui/core": "^3.3.1",
+    "@material-ui/icons": "^3.0.1"
+  },
+  "scripts": {
+    "build": "bash ./scripts/generateSymbols.sh",
+    "link:components": "bash ./scripts/linkComponents.sh",
+    "install:dependencies": "yarn && cd scripts/mui-icon-builder && yarn && cd ../.. && cd demos/showcase && yarn && cd ..",
+    "start:showcase": "yarn install:dependencies && yarn build && yarn link:components && cd demos/showcase && yarn start",
+    "start:storybook": "echo 'No storybook demo yet'",
+    "start": "yarn start:showcase",
+    "test": "./scripts/buildTest.sh",
+    "publish:package": "cd symbols && set npm_config_yes=true && npx -p @pxblue/publish pxb-publish"
+  },
+  "bugs": {
+    "url": "https://github.com/pxblue/symbols-mui/issues"
+  },
+  "homepage": "https://github.com/pxblue/symbols-mui#readme",
+  "prettier": "@pxblue/prettier-config",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@pxblue/prettier-config": "^1.0.2",
+    "@pxblue/symbols": "^1.0.0",
+    "prettier": "^2.2.1"
+  },
+  "keywords": [
+    "symbols",
+    "material",
+    "material-ui",
+    "pxblue"
+  ]
+}

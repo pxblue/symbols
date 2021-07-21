@@ -9,7 +9,7 @@
     "license": "BSD-3-Clause",
     "scripts": {
       "test:svg": "./scripts/svgBuildTest.sh",
-      "build": "create-svg-sprite --optimize --input './symbols/svg' --output './symbols' --name 'symbols'"
+      "build": "create-svg-sprite --optimize --input './symbols' --output './symbols' --name 'symbols'"
  },
     "files": [
         "iconfont",
@@ -24,9 +24,7 @@
     "homepage": "https://github.com/pxblue/icons#readme",
     "prettier": "@pxblue/prettier-config",
     "devDependencies": {
-        "@pxblue/prettier-config": "^1.0.3",
         "create-svg-sprite": "~1.0.4",
-        "prettier": "^2.2.1",
         "yarn-audit-fix": "^3.2.7"
     },
     "keywords": [
