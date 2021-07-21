@@ -1,4 +1,4 @@
-[![](https://img.shields.io/circleci/project/github/pxblue/symbols-mui/master.svg?style=flat)](https://circleci.com/gh/pxblue/symbols-mui/tree/master)
+[![](https://img.shields.io/circleci/project/github/pxblue/symbols/master.svg?style=flat)](https://circleci.com/gh/pxblue/symbols/tree/master)
 ![npm](https://img.shields.io/npm/v/@pxblue/symbols-mui?label=%40pxblue/symbols-mui)
 
 # PX Blue Symbols for Material-UI
