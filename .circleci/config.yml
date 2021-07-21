@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+    gh: circleci/github-cli@1.0.3
 jobs:
     build:
         docker:
@@ -43,6 +45,18 @@ jobs:
         - run:
             name: Publish @pxblue/symbols-mui
             command: cd symbols-mui && yarn publish:package -b $CIRCLE_BRANCH
+    tag:
+      docker:
+        - image: circleci/node:12.9.1-browsers
+      steps:
+        - checkout
+        - gh/setup
+        - run:
+            name: Tag @pxblue/symbols
+            command: cd symbols && yarn tag:package -b $CIRCLE_BRANCH
+        - run:
+            name: Tag @pxblue/symbols-mui
+            command: cd symbols-mui && yarn tag:package -b $CIRCLE_BRANCH
 workflows:
   version: 2
   symbols:
@@ -56,3 +70,10 @@ workflows:
               only:
                 - master
                 - dev
+      - tag:
+          requires:
+            - publish
+          filters:
+            branches:
+              only:
+                - master

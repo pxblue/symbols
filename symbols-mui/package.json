@@ -21,7 +21,8 @@
     "start:storybook": "echo 'No storybook demo yet'",
     "start": "yarn start:showcase",
     "test": "./scripts/buildTest.sh",
-    "publish:package": "cd symbols && set npm_config_yes=true && npx -p @pxblue/publish pxb-publish"
+    "publish:package": "cd symbols && set npm_config_yes=true && npx -p @pxblue/publish pxb-publish",
+    "tag:package": "cd symbols && npx -p @pxblue/tag pxb-tag"
   },
   "bugs": {
     "url": "https://github.com/pxblue/symbols-mui/issues"
