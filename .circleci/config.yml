@@ -7,6 +7,8 @@ jobs:
             - image: circleci/node:12.6-browsers
         steps:
             - checkout
+            - restore_cache:
+                key: v1-dependencies-{{ checksum "package.json" }}--{{ checksum "symbols-mui/package.json" }}
             - run:
                   name: Install Dependencies
                   command: |
@@ -22,6 +24,12 @@ jobs:
                   command: |
                       yarn test:svg
                       cd symbols-mui && yarn test
+            - save_cache:
+                  name: Save Cache
+                  paths:
+                    - node_modules
+                    - icons-mui/node_modules
+                  key: v1-dependencies-{{ checksum "package.json" }}--{{ checksum "symbols-mui/package.json" }}
             - persist_to_workspace:
                   root: .
                   paths:
