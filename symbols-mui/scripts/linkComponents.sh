@@ -15,30 +15,18 @@ yarn build
 echo -en "${BLUE}Creating new folder in node_modules...${NC}"
 rm -rf "./demos/showcase/node_modules/@pxblue/symbols-mui"
 mkdir -p "./demos/showcase/node_modules/@pxblue/symbols-mui"
-# rm -rf "./demos/storybook/node_modules/@pxblue/symbols-mui"
-# mkdir -p "./demos/storybook/node_modules/@pxblue/symbols-mui"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
-# cp -r ./symbols/package.json ./demos/showcase/node_modules/@pxblue/symbols-mui/package.json
 cp -r ./symbols/. ./demos/showcase/node_modules/@pxblue/symbols-mui
-# cp -r ./components/package.json ./demos/storybook/node_modules/@pxblue/symbols-mui/package.json
-# cp -r ./dist/. ./demos/storybook/node_modules/@pxblue/symbols-mui
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BLUE}Linking Components: ${NC}"
 if [ ! -f ./demos/showcase/node_modules/@pxblue/symbols-mui/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
-# if [ ! -f ./demos/storybook/node_modules/@pxblue/symbols-mui/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
 if [ ! -s ./demos/showcase/node_modules/@pxblue/symbols-mui ];
     then
         if [ ! -f ./demos/showcase/node_modules/@pxblue/symbols-mui/index.js ];
         then echo -e "${BRED}Not Linked${NC}" && exit 1;
         fi;
 fi
-# if [ ! -s ./demos/storybook/node_modules/@pxblue/symbols-mui ];
-#     then
-#         if [ ! -f ./demos/storybook/node_modules/@pxblue/symbols-mui/index.js ];
-#         then echo -e "${BRED}Not Linked${NC}" && exit 1;
-#         fi;
-# fi
 echo -e "${GRAY}Complete${NC}\r\n"
