@@ -31,8 +31,5 @@
         "icons",
         "material",
         "pxblue"
-    ],
-    "dependencies": {
-        "@pxblue/symbols": "^1.0.7"
-    }
+    ]
 }
