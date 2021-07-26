@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+    gh: circleci/github-cli@1.0.3
 jobs:
     build:
         docker:
@@ -6,23 +8,28 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "package.json" }}
-                      - v1-dependencies-
+                key: v1-dependencies--{{ checksum "package.json" }}--{{ checksum "symbols-mui/package.json" }}
             - run:
                   name: Install Dependencies
                   command: |
                       yarn install
-            - save_cache:
-                  paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}
+                      cd symbols-mui && yarn install:dependencies
             - run:
                   name: Build Packages
-                  command: yarn build
+                  command: |
+                      yarn build
+                      cd symbols-mui && yarn build
             - run:
                   name: Verify SVG Build Artifacts
-                  command: yarn test:svg
+                  command: |
+                      yarn test:svg
+                      cd symbols-mui && yarn test
+            - save_cache:
+                  name: Save Cache
+                  paths:
+                    - node_modules
+                    - icons-mui/node_modules
+                  key: v1-dependencies--{{ checksum "package.json" }}--{{ checksum "symbols-mui/package.json" }}
             - persist_to_workspace:
                   root: .
                   paths:
@@ -43,6 +50,21 @@ jobs:
         - run:
             name: Publish @pxblue/symbols
             command: cd symbols && yarn publish:package -b $CIRCLE_BRANCH
+        - run:
+            name: Publish @pxblue/symbols-mui
+            command: cd symbols-mui && yarn publish:package -b $CIRCLE_BRANCH
+    tag:
+      docker:
+        - image: circleci/node:12.9.1-browsers
+      steps:
+        - checkout
+        - gh/setup
+        - run:
+            name: Tag @pxblue/symbols
+            command: cd symbols && yarn tag:package -b $CIRCLE_BRANCH
+        - run:
+            name: Tag @pxblue/symbols-mui
+            command: cd symbols-mui && yarn tag:package -b $CIRCLE_BRANCH
 workflows:
   version: 2
   symbols:
@@ -56,3 +78,10 @@ workflows:
               only:
                 - master
                 - dev
+      - tag:
+          requires:
+            - publish
+          filters:
+            branches:
+              only:
+                - master
