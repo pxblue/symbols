@@ -1,22 +1,22 @@
 {
-    "name": "@pxblue/symbols",
-    "version": "1.0.7",
-    "description": "One line symbols for PX Blue applications",
+    "name": "@brightlayer-ui/symbols",
+    "version": "1.0.7-beta.0",
+    "description": "One line symbols for Brightlayer UI applications",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish",
-        "tag:package": "npx -p @pxblue/tag pxb-tag"
+        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s blui-symbols"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/pxblue/symbols.git"
+        "url": "git+https://github.com/brightlayer-ui/symbols.git"
     },
-    "author": "px-blue <pxblue@eaton.com>",
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
     "bugs": {
-        "url": "https://github.com/pxblue/symbols/issues"
+        "url": "https://github.com/brightlayer-ui/symbols/issues"
     },
-    "homepage": "https://github.com/pxblue/symbols#readme",
+    "homepage": "https://github.com/brightlayer-ui/symbols#readme",
     "dependencies": {}
 }

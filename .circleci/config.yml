@@ -49,10 +49,10 @@ jobs:
               echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
               echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
         - run:
-            name: Publish @pxblue/symbols
+            name: Publish @brightlayer-ui/symbols
             command: cd symbols && yarn publish:package -b $CIRCLE_BRANCH
         - run:
-            name: Publish @pxblue/symbols-mui
+            name: Publish @brightlayer-ui/symbols-mui
             command: cd symbols-mui && yarn publish:package -b $CIRCLE_BRANCH
     tag:
       docker:
@@ -61,10 +61,10 @@ jobs:
         - checkout
         - gh/setup
         - run:
-            name: Tag @pxblue/symbols
+            name: Tag @brightlayer-ui/symbols
             command: cd symbols && yarn tag:package -b $CIRCLE_BRANCH
         - run:
-            name: Tag @pxblue/symbols-mui
+            name: Tag @brightlayer-ui/symbols-mui
             command: cd symbols-mui && yarn tag:package -b $CIRCLE_BRANCH
 workflows:
   version: 2
