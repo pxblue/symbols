@@ -904,6 +904,16 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@brightlayer-ui/prettier-config@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/prettier-config/-/prettier-config-1.0.3.tgz#e40a7ae7435c6fd5118acbf249080e0aa81e93af"
+  integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
+
+"@brightlayer-ui/symbols@latest":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/symbols/-/symbols-0.0.0.tgz#b1321ce1642c0ca24c4e95736cbc27d4729b6d0e"
+  integrity sha512-yhLPTUQwsrVzZMiRDXJLEFWGoVGas2lT9bqLguyUynjoJBOlb7AFTS3bdV5EV83ILv0cBb1KfM0NWCmsHeTdgA==
+
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents":
   version "2.1.8-no-fsevents"
   resolved "https://registry.npmjs.org/@nicolo-ribaudo/chokidar-2/-/chokidar-2-2.1.8-no-fsevents.tgz#da7c3996b8e6e19ebd14d82eaced2313e7769f9b"
@@ -920,16 +930,6 @@
     path-is-absolute "^1.0.0"
     readdirp "^2.2.1"
     upath "^1.1.1"
-
-"@pxblue/prettier-config@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@pxblue/prettier-config/-/prettier-config-1.0.2.tgz#fb00503df6557b66c3d91d43c9101e614c35d2ec"
-  integrity sha512-/3cLBoTjZs3kV1ATPA/Sp0tsL7XmlV/b8HW/qt0jqR/uP5+cdXL2YIhMXQngLRa7PhpSkEiRIYK5sl0rKsXTUg==
-
-"@pxblue/symbols@^1.0.0":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@pxblue/symbols/-/symbols-1.0.7.tgz#ca8f3d5dc5d22fed6771870e0130e459f6000c36"
-  integrity sha512-XyhmjWlEYoZHBKiocIX+Ers8aZR5CIRectsiPW8luXcWpZAvhGa4zIbt83JNFHnYlo9qWzOt4m7fDV5Fzps25w==
 
 ansi-styles@^3.2.1:
   version "3.2.1"

@@ -11,13 +11,13 @@ This package is published to NPM automatically by CircleCI when code is merged i
 
 If you need to publish a package manually, you can run the following commands from the root folder:
 
-### @pxblue/symbols
+### @brightlayer-ui/symbols
 ```
 cd symbols
 yarn publish:package
 ```
 
-### @pxblue/symbols-mui
+### @brightlayer-ui/symbols-mui
 ```
 cd symbols-mui
 yarn publish:package

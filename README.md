@@ -1,6 +1,6 @@
-# PX Blue Symbols
-[![](https://img.shields.io/npm/v/@pxblue/symbols.svg?label=@pxblue/symbols&style=flat)](https://www.npmjs.com/package/@pxblue/symbols)
-[![](https://img.shields.io/npm/v/@pxblue/symbols-mui.svg?label=@pxblue/symbols-mui&style=flat)](https://www.npmjs.com/package/@pxblue/symbols-mui)
-[![](https://img.shields.io/circleci/project/github/pxblue/symbols/master.svg?style=flat)](https://circleci.com/gh/pxblue/symbols/tree/master)
+# Brightlayer UI Symbols
+[![](https://img.shields.io/npm/v/@brightlayer-ui/symbols.svg?label=@brightlayer-ui/symbols&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/symbols)
+[![](https://img.shields.io/npm/v/@brightlayer-ui/symbols-mui.svg?label=@brightlayer-ui/symbols-mui&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/symbols-mui)
+[![](https://img.shields.io/circleci/project/github/brightlayer-ui/symbols/master.svg?style=flat)](https://circleci.com/gh/brightlayer-ui/symbols/tree/master)
 
-This is a repo that contains [one-line symbols](https://github.com/pxblue/symbols/tree/master/symbols) for use in PX Blue applications as well as [componentized symbols](https://github.com/pxblue/symbols/tree/master/symbols-mui) for use within a React application.
+This is a repo that contains [one-line symbols](https://github.com/brightlayer-ui/symbols/tree/master/symbols) for use in Brightlayer UI applications as well as [componentized symbols](https://github.com/brightlayer-ui/symbols/tree/master/symbols-mui) for use within a React application.
