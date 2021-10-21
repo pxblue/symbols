@@ -36,7 +36,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@brightlayer-ui/prettier-config": "^1.0.3",
-    "@brightlayer-ui/symbols": "^1.0.7-beta.0",
+    "@brightlayer-ui/symbols": "latest",
     "prettier": "^2.2.1"
   },
   "keywords": [

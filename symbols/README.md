@@ -57,14 +57,14 @@ export class AppComponent {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
   ) {
-    this.matIconRegistry.addSvgIconSetInNamespace('px-symbols', this.domSanitizer.bypassSecurityTrustResourceUrl(symbolSet));
+    this.matIconRegistry.addSvgIconSetInNamespace('blui-symbols', this.domSanitizer.bypassSecurityTrustResourceUrl(symbolSet));
   }
 }
 ```
 
 ```
 // app.component.ts
-<mat-icon svgIcon="px-symbols:battery"></mat-icon>
+<mat-icon svgIcon="blui-symbols:battery"></mat-icon>
 ```
 
 ### React

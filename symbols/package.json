@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
-        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s blui-symbols"
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s -blui-symbols"
     },
     "repository": {
         "type": "git",
