@@ -25,9 +25,9 @@
     "tag:package": "cd symbols && npx -p @brightlayer-ui/tag blui -tag -s -blui-symbols-mui"
   },
   "bugs": {
-    "url": "https://github.com/brightlayer-ui/symbols-mui/issues"
+    "url": "https://github.com/brightlayer-ui/symbols/symbols-mui/issues"
   },
-  "homepage": "https://github.com/brightlayer-ui/symbols-mui#readme",
+  "homepage": "https://github.com/brightlayer-ui/symbols/symbols-mui#readme",
   "prettier": "@brightlayer-ui/prettier-config",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
