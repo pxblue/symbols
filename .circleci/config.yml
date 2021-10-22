@@ -62,10 +62,10 @@ jobs:
         - gh/setup
         - run:
             name: Tag @brightlayer-ui/symbols
-            command: cd symbols && yarn tag:package -b $CIRCLE_BRANCH
+            command: cd symbols && yarn tag:package -b $CIRCLE_BRANCH -s -blui-symbols
         - run:
             name: Tag @brightlayer-ui/symbols-mui
-            command: cd symbols-mui && yarn tag:package -b $CIRCLE_BRANCH
+            command: cd symbols-mui && yarn tag:package -b $CIRCLE_BRANCH -s -blui-symbols-mui
 workflows:
   version: 2
   symbols:
