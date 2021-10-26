@@ -18,7 +18,7 @@ echo -e "${BLUE}Done${NC}"
 
 echo -ne "Running MUI converter utility...${NC}"
 cd scripts/mui-icon-builder
-babel-node --config-file ./babel.config.js builder.js --output-dir ../../symbols --svg-dir ../../symbols
+babel-node --config-file ./babel.config.js builder.js --output-dir ../../symbols --svg-dir ../../../symbols
 cd ../..
 babel symbols --presets=@babel/preset-react,@babel/preset-env --out-dir symbols
 echo -e "${BLUE}Done${NC}"
