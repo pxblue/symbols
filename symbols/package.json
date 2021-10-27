@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/symbols",
-    "version": "1.0.7-beta.0",
+    "version": "1.0.7",
     "description": "One line symbols for Brightlayer UI applications",
     "main": "index.js",
     "scripts": {

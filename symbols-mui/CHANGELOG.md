@@ -1,6 +1,6 @@
 # Recent Changes
 
-## v1.1.1 (Not yet published)
+## v1.1.1 (October 27, 2021)
 
 ### Changed
 
