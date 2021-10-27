@@ -1,4 +1,4 @@
-## v1.0.7 (Not yet published)
+## v1.0.7 (October 27, 2021)
 
 ### Changed
 

@@ -1,6 +1,6 @@
 {
   "name": "@brightlayer-ui/symbols-mui",
-  "version": "1.1.1-beta.1",
+  "version": "1.1.1",
   "description": "Brightlayer UI symbols for Material UI",
   "main": "./index.js",
   "repository": {
@@ -22,7 +22,7 @@
     "start": "yarn start:showcase",
     "test": "./scripts/buildTest.sh",
     "publish:package": "cd symbols && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
-    "tag:package": "cd symbols && npx -p @brightlayer-ui/tag blui -tag -s -blui-symbols-mui"
+    "tag:package": "cd symbols && npx -p @brightlayer-ui/tag blui-tag -s -blui-symbols-mui"
   },
   "bugs": {
     "url": "https://github.com/brightlayer-ui/symbols/symbols-mui/issues"
