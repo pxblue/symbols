@@ -1,16 +1,16 @@
 {
-    "name": "@pxblue/symbols",
+    "name": "@brightlayer-ui/symbols",
     "version": "0.0.0",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/pxblue/symbols.git"
+        "url": "git+https://github.com/brightlayer-ui/symbols.git"
     },
-    "author": "PX Blue <pxblue@eaton.com>",
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
     "scripts": {
-      "test:svg": "./scripts/svgBuildTest.sh",
-      "build": "create-svg-sprite --optimize --input './symbols/svg' --output './symbols' --name 'symbols'"
- },
+        "test:svg": "./scripts/svgBuildTest.sh",
+        "build": "create-svg-sprite --optimize --input './symbols' --output './symbols' --name 'symbols'"
+    },
     "files": [
         "iconfont",
         "LICENSE",
@@ -19,19 +19,17 @@
         "CHANGELOG.md"
     ],
     "bugs": {
-        "url": "https://github.com/pxblue/icons/issues"
+        "url": "https://github.com/brightlayer-ui/icons/issues"
     },
-    "homepage": "https://github.com/pxblue/icons#readme",
-    "prettier": "@pxblue/prettier-config",
+    "homepage": "https://github.com/brightlayer-ui/icons#readme",
+    "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
-        "@pxblue/prettier-config": "^1.0.3",
         "create-svg-sprite": "~1.0.4",
-        "prettier": "^2.2.1",
         "yarn-audit-fix": "^3.2.7"
     },
     "keywords": [
         "icons",
         "material",
-        "pxblue"
+        "brightlayer-ui"
     ]
 }

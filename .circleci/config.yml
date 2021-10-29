@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+    gh: circleci/github-cli@1.0.3
 jobs:
     build:
         docker:
@@ -6,27 +8,33 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "package.json" }}
-                      - v1-dependencies-
+                key: v1-dependencies--{{ checksum "package.json" }}--{{ checksum "symbols-mui/package.json" }}
             - run:
                   name: Install Dependencies
                   command: |
                       yarn install
-            - save_cache:
-                  paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}
+                      cd symbols-mui && yarn install:dependencies
             - run:
                   name: Build Packages
-                  command: yarn build
+                  command: |
+                      yarn build
+                      cd symbols-mui && yarn build
             - run:
                   name: Verify SVG Build Artifacts
-                  command: yarn test:svg
+                  command: |
+                      yarn test:svg
+                      cd symbols-mui && yarn test
+            - save_cache:
+                  name: Save Cache
+                  paths:
+                    - node_modules
+                    - icons-mui/node_modules
+                  key: v1-dependencies--{{ checksum "package.json" }}--{{ checksum "symbols-mui/package.json" }}
             - persist_to_workspace:
                   root: .
                   paths:
                     - symbols
+                    - symbols-mui/symbols
 
     publish:
       docker:
@@ -41,8 +49,23 @@ jobs:
               echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
               echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
         - run:
-            name: Publish @pxblue/symbols
+            name: Publish @brightlayer-ui/symbols
             command: cd symbols && yarn publish:package -b $CIRCLE_BRANCH
+        - run:
+            name: Publish @brightlayer-ui/symbols-mui
+            command: cd symbols-mui && yarn publish:package -b $CIRCLE_BRANCH
+    tag:
+      docker:
+        - image: circleci/node:12.9.1-browsers
+      steps:
+        - checkout
+        - gh/setup
+        - run:
+            name: Tag @brightlayer-ui/symbols
+            command: cd symbols && yarn tag:package -b $CIRCLE_BRANCH -s -blui-symbols
+        - run:
+            name: Tag @brightlayer-ui/symbols-mui
+            command: cd symbols-mui && yarn tag:package -b $CIRCLE_BRANCH -s -blui-symbols-mui
 workflows:
   version: 2
   symbols:
@@ -56,3 +79,10 @@ workflows:
               only:
                 - master
                 - dev
+      - tag:
+          requires:
+            - publish
+          filters:
+            branches:
+              only:
+                - master

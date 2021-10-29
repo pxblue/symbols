@@ -1,0 +1,48 @@
+{
+  "name": "@brightlayer-ui/symbols-mui",
+  "version": "1.1.1",
+  "description": "Brightlayer UI symbols for Material UI",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brightlayer-ui/symbols.git"
+  },
+  "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
+  "license": "BSD-3-Clause",
+  "peerDependencies": {
+    "@material-ui/core": "^3.3.1",
+    "@material-ui/icons": "^3.0.1"
+  },
+  "scripts": {
+    "build": "bash ./scripts/generateSymbols.sh",
+    "link:components": "bash ./scripts/linkComponents.sh",
+    "install:dependencies": "yarn && cd scripts/mui-icon-builder && yarn && cd ../.. && cd demos/showcase && yarn && cd ..",
+    "start:showcase": "yarn install:dependencies && yarn build && yarn link:components && cd demos/showcase && yarn start",
+    "start:storybook": "echo 'No storybook demo yet'",
+    "start": "yarn start:showcase",
+    "test": "./scripts/buildTest.sh",
+    "publish:package": "cd symbols && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+    "tag:package": "cd symbols && npx -p @brightlayer-ui/tag blui-tag -s -blui-symbols-mui"
+  },
+  "bugs": {
+    "url": "https://github.com/brightlayer-ui/symbols/symbols-mui/issues"
+  },
+  "homepage": "https://github.com/brightlayer-ui/symbols/symbols-mui#readme",
+  "prettier": "@brightlayer-ui/prettier-config",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@brightlayer-ui/prettier-config": "^1.0.3",
+    "@brightlayer-ui/symbols": "latest",
+    "prettier": "^2.2.1"
+  },
+  "keywords": [
+    "symbols",
+    "material",
+    "material-ui",
+    "brightlayer-ui"
+  ]
+}
