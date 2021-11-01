@@ -60,6 +60,8 @@ jobs:
       steps:
         - checkout
         - gh/setup
+        - attach_workspace:
+            at: .
         - run:
             name: Tag @brightlayer-ui/symbols
             command: cd symbols && yarn tag:package -b $CIRCLE_BRANCH -s -blui-symbols
