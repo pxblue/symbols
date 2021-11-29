@@ -4,6 +4,5 @@ import { App } from './App';
 
 test('renders learn react link', () => {
     render(<App />);
-    const pxbText = screen.getByText(/PX Blue/i);
-    expect(pxbText).toBeInTheDocument();
+    expect(screen.getByTestId('symbolContainer')).toBeInTheDocument();
 });
