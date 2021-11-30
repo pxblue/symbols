@@ -13,19 +13,19 @@ echo -e "${BLUE}Building components...${NC}"
 yarn build
 
 echo -en "${BLUE}Creating new folder in node_modules...${NC}"
-rm -rf "./demos/showcase/node_modules/@pxblue/symbols-mui"
-mkdir -p "./demos/showcase/node_modules/@pxblue/symbols-mui"
+rm -rf "./demos/showcase/node_modules/@brightlayer-ui/symbols-mui"
+mkdir -p "./demos/showcase/node_modules/@brightlayer-ui/symbols-mui"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
-cp -r ./symbols/. ./demos/showcase/node_modules/@pxblue/symbols-mui
+cp -r ./symbols/. ./demos/showcase/node_modules/@brightlayer-ui/symbols-mui
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BLUE}Linking Components: ${NC}"
-if [ ! -f ./demos/showcase/node_modules/@pxblue/symbols-mui/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
-if [ ! -s ./demos/showcase/node_modules/@pxblue/symbols-mui ];
+if [ ! -f ./demos/showcase/node_modules/@brightlayer-ui/symbols-mui/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
+if [ ! -s ./demos/showcase/node_modules/@brightlayer-ui/symbols-mui ];
     then
-        if [ ! -f ./demos/showcase/node_modules/@pxblue/symbols-mui/index.js ];
+        if [ ! -f ./demos/showcase/node_modules/@brightlayer-ui/symbols-mui/index.js ];
         then echo -e "${BRED}Not Linked${NC}" && exit 1;
         fi;
 fi
