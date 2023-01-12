@@ -5,7 +5,7 @@
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brightlayer-ui/symbols.git"
+    "url": "git+https://github.com/etn-ccis/blui-symbols.git"
   },
   "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
   "license": "BSD-3-Clause",
@@ -25,9 +25,9 @@
     "tag:package": "cd symbols && npx -p @brightlayer-ui/tag blui-tag -s -blui-symbols-mui"
   },
   "bugs": {
-    "url": "https://github.com/brightlayer-ui/symbols/symbols-mui/issues"
+    "url": "https://github.com/etn-ccis/blui-symbols/issues"
   },
-  "homepage": "https://github.com/brightlayer-ui/symbols/symbols-mui#readme",
+  "homepage": "https://github.com/etn-ccis/blui-symbols/tree/master/symbols-mui#readme",
   "prettier": "@brightlayer-ui/prettier-config",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -40,9 +40,10 @@
     "prettier": "^2.2.1"
   },
   "keywords": [
-    "symbols",
+    "icons",
     "material",
-    "material-ui",
-    "brightlayer-ui"
+    "brightlayer-ui",
+    "mui",
+    "one-line"
   ]
 }
