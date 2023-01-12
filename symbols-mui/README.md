@@ -5,7 +5,7 @@
 This library contains componentized svg symbols from [@brightlayer-ui/symbols](https://github.com/etn-ccis/blui-symbols) for use in React applications using Material UI. The symbols are made available in the same way that MUI exposes the [Material Icons](https://mui.com/material-ui/icons/#svg-material-icons). 
 
 ## Installation
-To install the Brightlayer UI's MUI symbols from NPM as a dependency for your project, you can run one of the following commands in your project root:
+To install Brightlayer UI's MUI symbols from NPM as a dependency for your project, you can run one of the following commands in your project root:
 ```sh
 npm install --save @brightlayer-ui/symbols-mui
 or
