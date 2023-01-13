@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/brightlayer-ui/symbols.git"
+        "url": "git+https://github.com/etn-ccis/blui-symbols.git"
     },
     "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
@@ -19,17 +19,12 @@
         "CHANGELOG.md"
     ],
     "bugs": {
-        "url": "https://github.com/brightlayer-ui/icons/issues"
+        "url": "https://github.com/etn-ccis/blui-symbols/issues"
     },
-    "homepage": "https://github.com/brightlayer-ui/icons#readme",
+    "homepage": "https://github.com/etn-ccis/blui-symbols#readme",
     "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
         "create-svg-sprite": "~1.0.4",
         "yarn-audit-fix": "^3.2.7"
-    },
-    "keywords": [
-        "icons",
-        "material",
-        "brightlayer-ui"
-    ]
+    }
 }

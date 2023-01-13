@@ -1,12 +1,12 @@
 # Brightlayer UI Symbols
 [![](https://img.shields.io/npm/v/@brightlayer-ui/symbols.svg?label=@brightlayer-ui/symbols&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/symbols)
-[![](https://img.shields.io/circleci/project/github/brightlayer-ui/symbols/master.svg?style=flat)](https://circleci.com/gh/brightlayer-ui/symbols/tree/master)
+[![](https://img.shields.io/circleci/project/github/etn-ccis/blui-symbols/master.svg?style=flat)](https://circleci.com/gh/etn-ccis/blui-symbols/tree/master)
 
 This is a library of one-line symbols for use in Brightlayer UI applications.
 
 ## Installation
 To install the Brightlayer UI symbols from NPM as a dependency for your project, you can run one of the following commands in your project root:
-```
+```sh
 npm install --save @brightlayer-ui/symbols
 or
 yarn add @brightlayer-ui/symbols
@@ -29,7 +29,7 @@ const symbolSet = require("@brightlayer-ui/symbols/symbols.svg"); // full set
 Then, in your constructor, register the symbol or the symbol set. It will then be available for use as a ```<mat-icon>```.
 
 #### Individual Icon
-```
+```ts
 // app.component.ts
 export class AppComponent {
   constructor(
@@ -44,13 +44,13 @@ export class AppComponent {
 }
 ```
 
-```
+```html
 // app.component.html
 <mat-icon svgIcon="battery"></mat-icon>
 ```
 
 #### Entire Icon Set
-```
+```ts
 // app.component.ts
 export class AppComponent {
   constructor(
@@ -62,13 +62,13 @@ export class AppComponent {
 }
 ```
 
-```
+```html
 // app.component.ts
 <mat-icon svgIcon="blui-symbols:battery"></mat-icon>
 ```
 
 ### React
-```
+```jsx
 const symbol = require('@brightlayer-ui/symbols/SYMBOL_NAME.svg');
 ...
 <img src={symbol}/>
@@ -77,7 +77,7 @@ const symbol = require('@brightlayer-ui/symbols/SYMBOL_NAME.svg');
 >NOTE: If you will be using many of these symbols in your application, we recommend you use [@brightlayer-ui/symbols-mui](https://www.npmjs.com/package/@brightlayer-ui/symbols-mui) to simplify usage. This library makes more sense if you just need one or two symbols or if you want to reduce the size of your bundle.
 
 ### Available Symbols
-Please see [Available Symbols](https://github.com/brightlayer-ui/symbols/blob/master/available_symbols.md) for a list of currently available symbols.
+Please see [Available Symbols](https://github.com/etn-ccis/blui-symbols/blob/master/available_symbols.md) for a list of currently available symbols.
 
 # For Icon Creators
 Each symbol has its own folder in the /icons/symbols folder, which includes the clean SVG file .
