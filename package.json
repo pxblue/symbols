@@ -25,6 +25,6 @@
     "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
         "create-svg-sprite": "~1.0.4",
-        "yarn-audit-fix": "^3.2.7"
+        "yarn-audit-fix": "^9.3.8"
     }
 }
