@@ -24,7 +24,7 @@
     "homepage": "https://github.com/etn-ccis/blui-symbols#readme",
     "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
-        "create-svg-sprite": "~1.0.4",
+        "create-svg-sprite": "~1.1.0",
         "yarn-audit-fix": "^9.3.8"
     }
 }
