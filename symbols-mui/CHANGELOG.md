@@ -1,4 +1,10 @@
-# Recent Changes
+# Changelog
+
+## v1.2.0 (October 13, 2023)
+
+### Added
+
+-   Added two symbols, ATC 300 and TC50 100.
 
 ## v1.1.1 (October 29, 2021)
 

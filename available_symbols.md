@@ -6,6 +6,7 @@ Currently, we have symbols available for:
 * ammeter
 * arms
 * ats
+* atc_300
 * battery
 * battery_caution
 * battery_empty
@@ -95,6 +96,7 @@ Currently, we have symbols available for:
 * switchgear_dashboard
 * switchgear_dashboard_light
 * switchgear_light
+* tc50_100
 * toggle
 * touchscreen_large
 * touchscreen_small
