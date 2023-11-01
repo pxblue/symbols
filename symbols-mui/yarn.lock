@@ -1022,9 +1022,9 @@
   integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
 
 "@brightlayer-ui/symbols@latest":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/symbols/-/symbols-0.0.0.tgz#b1321ce1642c0ca24c4e95736cbc27d4729b6d0e"
-  integrity sha512-yhLPTUQwsrVzZMiRDXJLEFWGoVGas2lT9bqLguyUynjoJBOlb7AFTS3bdV5EV83ILv0cBb1KfM0NWCmsHeTdgA==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/symbols/-/symbols-1.1.0.tgz#87ee114647d70a9d0377cd0842324afa69931e3b"
+  integrity sha512-9ztpRSv+Lvw8F4ebVaSvU10lQcv39Wtudr9sNc0IoFgTWujwCnMTOJOvmzeTkEVySYVGp3bQHf/51+NkE8oukg==
 
 "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
