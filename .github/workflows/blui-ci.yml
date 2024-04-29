@@ -65,7 +65,7 @@ jobs:
     - name: Save symbols-mui build
       uses: actions/upload-artifact@v3
       with:
-        name: symbols
+        name: symbols-mui
         if-no-files-found: error
         path: symbols-mui/symbols
 
