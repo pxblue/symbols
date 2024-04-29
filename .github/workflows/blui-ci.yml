@@ -32,8 +32,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
     - run: yarn
-    - run: yarn test:svg
     - run: yarn build
+    - run: yarn test:svg
     - name: Save symbols build
       uses: actions/upload-artifact@v3
       with:
@@ -58,9 +58,9 @@ jobs:
         cache: 'yarn'
     - run: yarn install:dependencies
       working-directory: symbols-mui
-    - run: yarn test
-      working-directory: symbols-mui
     - run: yarn build
+      working-directory: symbols-mui
+    - run: yarn test
       working-directory: symbols-mui
     - name: Save symbols-mui build
       uses: actions/upload-artifact@v3
