@@ -1,4 +1,4 @@
-![npm](https://img.shields.io/npm/v/@brightlayer-ui/symbols-mui?label=%40brightlayer-ui/symbols-mui)[![Build](https://github.com/etn-ccis/blui-symbols/actions/workflows/blui-ci.yml/badge.svg)](https://github.com/etn-ccis/blui-symbols/actions/workflows/blui-ci.yml)
+![npm](https://img.shields.io/npm/v/@brightlayer-ui/symbols-mui?label=%40brightlayer-ui/symbols-mui)[![Build](https://github.com/etn-ccis/blui-symbols/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-symbols/actions/workflows/blui-ci.yml)
 
 # Brightlayer UI Symbols for Material-UI
 
