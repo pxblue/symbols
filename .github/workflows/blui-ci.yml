@@ -90,7 +90,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
-      - run: yarn --frozen-lockfile
+      - run: yarn --immutable
       - run: npm run publish:package -b ${{env.BRANCH}}
         working-directory: symbols
 
@@ -115,7 +115,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
-      - run: yarn --frozen-lockfile
+      - run: yarn --immutable
         working-directory: symbols-mui
       - run: npm run publish:package -b ${{env.BRANCH}}
         working-directory: symbols-mui
