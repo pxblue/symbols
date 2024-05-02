@@ -1,0 +1,121 @@
+name: Build
+
+on:
+  push:
+    branches: [ "dev", "master" ]
+  pull_request:
+    branches: [ "dev", "master" ]
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - '*/*'
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  build_symbols:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+    - run: yarn
+    - run: yarn build
+    - run: yarn test:svg
+    - name: Save symbols
+      uses: actions/upload-artifact@v3
+      with:
+        name: symbols
+        if-no-files-found: error
+        path: symbols
+
+  build_symbols_mui:
+    runs-on: ubuntu-latest
+      
+    strategy:
+      matrix:
+        node-version: [18.x]
+      
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+    - run: yarn install:dependencies
+      working-directory: symbols-mui
+    - run: yarn build
+      working-directory: symbols-mui
+    - run: yarn test
+      working-directory: symbols-mui
+    - name: Save symbols-mui
+      uses: actions/upload-artifact@v3
+      with:
+        name: symbols-mui
+        if-no-files-found: error
+        path: symbols-mui/symbols
+
+  publish_symbols:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+    needs: build_symbols
+    strategy:
+      matrix:
+        node-version: [18.x]
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download symbols
+        uses: actions/download-artifact@v3
+        with:
+          name: symbols
+          path: symbols
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn --immutable
+      - run: npm run publish:package -b ${{env.BRANCH}}
+        working-directory: symbols
+
+  publish_symbols_mui:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+    needs: build_symbols_mui
+    strategy:
+      matrix:
+        node-version: [18.x]
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download symbols mui package
+        uses: actions/download-artifact@v3
+        with:
+          name: symbols-mui
+          path: symbols-mui/symbols
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn --immutable
+        working-directory: symbols-mui
+      - run: npm run publish:package -b ${{env.BRANCH}}
+        working-directory: symbols-mui

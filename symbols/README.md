@@ -1,6 +1,6 @@
 # Brightlayer UI Symbols
 [![](https://img.shields.io/npm/v/@brightlayer-ui/symbols.svg?label=@brightlayer-ui/symbols&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/symbols)
-[![](https://img.shields.io/circleci/project/github/etn-ccis/blui-symbols/master.svg?style=flat)](https://circleci.com/gh/etn-ccis/blui-symbols/tree/master)
+[![Build](https://github.com/etn-ccis/blui-symbols/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-symbols/actions/workflows/blui-ci.yml)
 
 This is a library of one-line symbols for use in Brightlayer UI applications.
 

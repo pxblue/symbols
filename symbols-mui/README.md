@@ -1,5 +1,4 @@
-[![](https://img.shields.io/circleci/project/github/etn-ccis/blui-symbols/master.svg?style=flat)](https://circleci.com/gh/etn-ccis/blui-symbols/tree/master)
-![npm](https://img.shields.io/npm/v/@brightlayer-ui/symbols-mui?label=%40brightlayer-ui/symbols-mui)
+![npm](https://img.shields.io/npm/v/@brightlayer-ui/symbols-mui?label=%40brightlayer-ui/symbols-mui)[![Build](https://github.com/etn-ccis/blui-symbols/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-symbols/actions/workflows/blui-ci.yml)
 
 # Brightlayer UI Symbols for Material-UI
 

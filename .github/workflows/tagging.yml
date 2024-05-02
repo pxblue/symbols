@@ -1,0 +1,22 @@
+name: Tagging
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  CURRENT_BRANCH: ${{ github.ref_name }}
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tag-symbols-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd symbols && yarn tag:package -b ${CURRENT_BRANCH}
+  tag-symbols-mui-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd symbols-mui && yarn tag:package -b ${CURRENT_BRANCH}
