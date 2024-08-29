@@ -122,7 +122,7 @@
     "url-loader": "^1.0.1",
     "vrtest": "^0.2.0",
     "webfontloader": "^1.6.28",
-    "webpack": "4.20.2",
+    "webpack": "5.94.0",
     "webpack-bundle-analyzer": "^3.0.0",
     "webpack-cli": "^3.1.0",
     "workbox-build": "^3.0.1",
