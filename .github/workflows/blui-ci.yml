@@ -35,7 +35,7 @@ jobs:
     - run: yarn build
     - run: yarn test:svg
     - name: Save symbols
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: symbols
         if-no-files-found: error
@@ -63,7 +63,7 @@ jobs:
     - run: yarn test
       working-directory: symbols-mui
     - name: Save symbols-mui
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: symbols-mui
         if-no-files-found: error
@@ -82,11 +82,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download symbols
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: symbols
           path: symbols
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
@@ -107,11 +107,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download symbols mui package
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: symbols-mui
           path: symbols-mui/symbols
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
